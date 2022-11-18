@@ -30,19 +30,14 @@ docker exec -it shabeeb-mysql mysql -u root -p
 4. now we have to create new database in db.
 create database wordpress;
 
-here,
-
-
-
-
-
-
 5. we are creating  wordress container from latest image,
 
 docker pull wordpress
 docker run --name shabeeb-wordpress -p 8080:80 -d wordpress
 
-here both containers are isolated with its network. So we have to create a network and add these two conatiners inside the network.
+try to access publicip:8080 and give the username,password and databasename and hostname.
+
+Now, we will encounter an “error establishing a database connection” if we use localhost as our Database Host. That is because our mysql database is inside a separate docker container that is not accessible from the wordpress container.
 
 
 6. creating a network.
