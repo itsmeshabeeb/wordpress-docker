@@ -57,3 +57,30 @@ username :root
 password :shabeeb
 database :wordpress
 host     :shabeeb-mysql
+
+
+
+
+Docker-composer:
+
+--First, we need docker-compose installed on our machine by simply running docker-compose -v. If it is not installed on our machine yet, we need to install it first by running docker-compose-install.sh
+
+
+bash docker-compose-install.sh
+
+--Next, we need to create a new docker-compose.yml file and fill it with wordpress and mysql setup. The filename actually can be anything, but if we use other name we need to specify the file when running the compose command.
+
+--To run the services, we only need to run a single command. Note that -d flag will make the services run in the background.
+
+docker-compose up -d
+
+--Although, we run the containers declaratively, we can still use docker commands to do operation on these containers. For example, if we want to go inside the database, we can use the same command as before.
+
+docker exec -it my_mysql mysql -u root -p
+
+--To shutdown these containers, we don’t need to delete them one by one. We can simply run:
+
+docker-compose down
+
+
+----------------------------------------
