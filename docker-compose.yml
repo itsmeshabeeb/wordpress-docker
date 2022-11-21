@@ -15,8 +15,6 @@ services:
   mysql:
     container_name: shabeeb_mysql
     image: "mysql"
-    volumes:
-      - ./.mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_ROOT_PASSWORD: "shabeeb123"
